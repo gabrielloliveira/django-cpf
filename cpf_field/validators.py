@@ -31,5 +31,5 @@ def validate_cpf(value):
 
     # Checks whether the cpf is on the list of invalid persons or if a check digit does not match the digits calculated
     # in the expression
-    if cpf in INVALIDS_CPFS or (not cpf[-2:] == "%s%s" % (first_digit, second_digit)):
+    if cpf in INVALIDS_CPFS or (not cpf[-2:] == f'{first_digit}{second_digit}):
         raise ValidationError('Número de CPF inválido', 'invalid')
